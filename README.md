@@ -1,3 +1,9 @@
+## Project Info
+
+This web application was developed as part of a **group project for a Software Engineering class.**
+
+The original repository can be found [here](https://github.com/rdubsky17/gp-pitch).
+
 ## Prerequisites
 
 To clone the repo locally:
