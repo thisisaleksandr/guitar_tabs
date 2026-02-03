@@ -76,7 +76,7 @@ EMAIL_PASS="your-email-password"
 NEXT_PUBLIC_APP_URL="http://localhost:3000"
 ```
 \
-For now, just run the development server:
+To run the development server:
 
 ```bash
 npm run dev
