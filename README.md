@@ -69,8 +69,6 @@ node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
 
 ### Nodemailer Setup:
 
-(see password in Discord)
-
 1. Add following variables to **.env**:
 ```bash
 EMAIL_USER=guitartabsweb@gmail.com    
