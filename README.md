@@ -4,6 +4,8 @@ This web application was developed as part of a **group project for a Software E
 
 The original repository can be found [here](https://github.com/rdubsky17/gp-pitch).
 
+The deployed version is currently unavailable.
+
 ## Prerequisites
 
 To clone the repo locally:
