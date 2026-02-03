@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  // The prisma.config.ts will override this if DATABASE_URL is provided
+  // Path is relative to this schema file location (prisma/ directory)
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          Int      @id @default(autoincrement())
+  username    String
+  email       String   @unique
+  password    String
+  createdAt   DateTime @default(now())
+
+  uploadedTracks Track[] @relation("UploadedTracks")
+  Uploads     UserTracks[]
+  scores      Score[]
+}
+
+model Track {
+  id          Int       @id @default(autoincrement())
+  songName    String   
+  artist      String
+  filePath    String    // relative path to .gp file (e.g., /songs/song.gp or /uploads/user-1/song.gp)
+  isUserUpload Boolean  @default(false) // distinguish user uploads from library
+  uploadedBy  Int?      // user who uploaded (null for library songs)
+  uploadedAt  DateTime  @default(now())
+
+  uploader    User?     @relation("UploadedTracks", fields: [uploadedBy], references: [id])
+  Uploads     UserTracks[]
+  scores      Score[]
+}
+
+model Score {
+  id            Int      @id @default(autoincrement())
+  userId        Int
+  trackId       Int
+  createdAt     DateTime @default(now())
+  instrument    String
+  value         Int      // percentage score (0-100)
+  
+  // Detailed scoring metadata
+  hits          Int      // notes hit correctly
+  total         Int      // total notes in song
+
+  user          User   @relation(fields: [userId], references: [id])
+  track         Track  @relation(fields: [trackId], references: [id])
+  
+  @@index([userId, trackId])
+  @@index([trackId, value])
+}
+
+model UserTracks {
+  id           Int      @id
+  userId       Int
+  trackId      Int
+
+  user         User   @relation(fields: [userId], references: [id])
+  track        Track  @relation(fields: [trackId], references: [id])
+} 

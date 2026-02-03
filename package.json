@@ -1,0 +1,37 @@
+{
+  "name": "gp-pitch",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start",
+    "lint": "eslint",
+    "seed": "tsx seed.ts"
+  },
+  "dependencies": {
+    "@coderline/alphatab": "^1.6.3",
+    "@prisma/client": "^6.19.0",
+    "@types/nodemailer": "^7.0.4",
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^17.2.3",
+    "jose": "^6.1.2",
+    "next": "15.5.4",
+    "nodemailer": "^7.0.11",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20.19.25",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.4",
+    "prisma": "^6.19.0",
+    "tailwindcss": "^4",
+    "tsx": "^4.20.6",
+    "typescript": "^5"
+  }
+}
