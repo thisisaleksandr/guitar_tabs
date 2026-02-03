@@ -6,6 +6,16 @@ The original repository can be found [here](https://github.com/rdubsky17/gp-pitc
 
 The deployed version is currently unavailable.
 
+**Screenshots of the Application:**
+
+Login screen:
+
+![alt text](https://github.com/thisisaleksandr/guitar_tabs/blob/main/login_page_screenshot.jpg)
+
+Tab view:
+
+![alt text](https://github.com/thisisaleksandr/guitar_tabs/blob/main/tab_page_screenshot.jpg)
+
 ## Prerequisites
 
 To clone the repo locally:
